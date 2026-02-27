@@ -4,16 +4,9 @@ import os
 import json
 from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright
+from utils.logger import get_logger, Logger
 
 # 全局 fixture 可以在这里定义，但 pytest-playwright 已经提供了 `browser`、`context`、`page` 等 fixture
-# 我们可以通过钩子函数设置默认的浏览器启动参数
-
-def pytest_setup_options():
-    """设置浏览器启动选项（可选）"""
-    return {
-        "headless": False,   # 默认无头模式，这里可以设为 False 方便调试
-        "slow_mo": 500,       # 减慢操作速度（毫秒）
-    }
 
 @pytest.fixture(scope="session")
 def base_url():
@@ -33,3 +26,8 @@ def page(page, base_url):
 def user_data():
     with open("data/users.json") as f:
         return json.load(f)
+
+@pytest.fixture
+def logger(request):
+    """提供日志记录器 fixture"""
+    return get_logger(request.node.name)

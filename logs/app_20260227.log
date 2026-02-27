@@ -1,0 +1,32 @@
+2026-02-27 17:17:45 - test_valid_login[chromium] - INFO - [test_login.py:8] - test_valid_login() - 开始执行登录测试
+2026-02-27 17:17:45 - pages.login_page - INFO - [login_page.py:13] - __init__() - LoginPage 初始化完成
+2026-02-27 17:17:45 - test_valid_login[chromium] - INFO - [test_login.py:11] - test_valid_login() - 导航到登录页面
+2026-02-27 17:17:45 - pages.login_page - INFO - [login_page.py:18] - navigate() - 导航到登录页面: http://10.10.27.171:7070/ztna-manager/
+2026-02-27 17:17:46 - pages.login_page - INFO - [login_page.py:20] - navigate() - 登录页面加载完成
+2026-02-27 17:17:46 - test_valid_login[chromium] - INFO - [test_login.py:15] - test_valid_login() - 使用用户名: sysadmin 进行登录
+2026-02-27 17:17:46 - pages.login_page - INFO - [login_page.py:24] - login() - 开始登录操作，用户名: sysadmin
+2026-02-27 17:17:47 - pages.login_page - INFO - [login_page.py:35] - login() - 登录操作执行完成
+2026-02-27 17:17:47 - test_valid_login[chromium] - INFO - [test_login.py:18] - test_valid_login() - 登录操作完成
+2026-02-27 17:17:47 - test_valid_login[chromium] - INFO - [test_login.py:21] - test_valid_login() - 验证登录后是否跳转到仪表盘
+2026-02-27 17:20:50 - test_valid_login[chromium] - INFO - [test_login.py:8] - test_valid_login() - 开始执行登录测试
+2026-02-27 17:20:50 - pages.login_page - INFO - [login_page.py:13] - __init__() - LoginPage 初始化完成
+2026-02-27 17:20:50 - test_valid_login[chromium] - INFO - [test_login.py:11] - test_valid_login() - 导航到登录页面
+2026-02-27 17:20:50 - pages.login_page - INFO - [login_page.py:18] - navigate() - 导航到登录页面: http://10.10.27.171:7070/ztna-manager/
+2026-02-27 17:20:51 - pages.login_page - INFO - [login_page.py:20] - navigate() - 登录页面加载完成
+2026-02-27 17:20:51 - test_valid_login[chromium] - INFO - [test_login.py:15] - test_valid_login() - 使用用户名: sysadmin 进行登录
+2026-02-27 17:20:51 - pages.login_page - INFO - [login_page.py:24] - login() - 开始登录操作，用户名: sysadmin
+2026-02-27 17:20:52 - pages.login_page - INFO - [login_page.py:35] - login() - 登录操作执行完成
+2026-02-27 17:20:52 - test_valid_login[chromium] - INFO - [test_login.py:18] - test_valid_login() - 登录操作完成
+2026-02-27 17:20:52 - test_valid_login[chromium] - INFO - [test_login.py:21] - test_valid_login() - 验证登录后是否跳转到仪表盘
+2026-02-27 17:20:52 - test_valid_login[chromium] - INFO - [test_login.py:23] - test_valid_login() - 登录测试通过
+2026-02-27 17:21:04 - test_valid_login[chromium] - INFO - [test_login.py:8] - test_valid_login() - 开始执行登录测试
+2026-02-27 17:21:04 - pages.login_page - INFO - [login_page.py:13] - __init__() - LoginPage 初始化完成
+2026-02-27 17:21:04 - test_valid_login[chromium] - INFO - [test_login.py:11] - test_valid_login() - 导航到登录页面
+2026-02-27 17:21:04 - pages.login_page - INFO - [login_page.py:18] - navigate() - 导航到登录页面: http://10.10.27.171:7070/ztna-manager/
+2026-02-27 17:21:05 - pages.login_page - INFO - [login_page.py:20] - navigate() - 登录页面加载完成
+2026-02-27 17:21:05 - test_valid_login[chromium] - INFO - [test_login.py:15] - test_valid_login() - 使用用户名: sysadmin 进行登录
+2026-02-27 17:21:05 - pages.login_page - INFO - [login_page.py:24] - login() - 开始登录操作，用户名: sysadmin
+2026-02-27 17:21:06 - pages.login_page - INFO - [login_page.py:35] - login() - 登录操作执行完成
+2026-02-27 17:21:06 - test_valid_login[chromium] - INFO - [test_login.py:18] - test_valid_login() - 登录操作完成
+2026-02-27 17:21:06 - test_valid_login[chromium] - INFO - [test_login.py:21] - test_valid_login() - 验证登录后是否跳转到仪表盘
+2026-02-27 17:21:06 - test_valid_login[chromium] - INFO - [test_login.py:23] - test_valid_login() - 登录测试通过
