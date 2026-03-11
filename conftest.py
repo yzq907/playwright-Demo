@@ -3,18 +3,18 @@ import pytest
 import os
 import json
 from datetime import datetime
-from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright
 from utils.logger import get_logger, Logger
 from pages.login_page import LoginPage
 import allure
+from config.settings import Config
 
 # 全局 fixture 可以在这里定义，但 pytest-playwright 已经提供了 `browser`、`context`、`page` 等 fixture
 
 @pytest.fixture(scope="session")
 def base_url():
     """返回基础 URL，供测试使用"""
-    return os.getenv("BASE_URL", "http://10.10.27.171:7070")
+    return Config.get_base_url()
 
 @pytest.fixture(scope="module")
 def page_module(browser, base_url):
@@ -86,7 +86,7 @@ def take_screenshot(page, test_name, outcome="passed"):
         str: 截图文件路径
     """
     try:
-        screenshots_dir = "screenshots"
+        screenshots_dir = Config.SCREENSHOT_DIR
         os.makedirs(screenshots_dir, exist_ok=True)
         
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -94,7 +94,7 @@ def take_screenshot(page, test_name, outcome="passed"):
         filename = f"{safe_test_name}_{outcome}_{timestamp}.png"
         filepath = os.path.join(screenshots_dir, filename)
         
-        page.screenshot(path=filepath, full_page=True)
+        page.screenshot(path=filepath, full_page=Config.SCREENSHOT_FULL_PAGE)
         print(f"\n截图已保存: {filepath}")
         
         return filepath

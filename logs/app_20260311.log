@@ -1,0 +1,103 @@
+2026-03-11 11:19:39 - login_fixture - INFO - [conftest.py:47] - logged_in_page() - 执行module级别登录
+2026-03-11 11:19:39 - pages.login_page - INFO - [login_page.py:13] - __init__() - LoginPage 初始化完成
+2026-03-11 11:19:39 - pages.login_page - INFO - [login_page.py:18] - navigate() - 导航到登录页面: http://10.10.27.171:7070/ztna-manager/
+2026-03-11 11:19:39 - pages.login_page - INFO - [login_page.py:20] - navigate() - 登录页面加载完成
+2026-03-11 11:19:39 - login_fixture - INFO - [conftest.py:53] - logged_in_page() - 使用用户名: sysadmin 进行登录
+2026-03-11 11:19:39 - pages.login_page - INFO - [login_page.py:24] - login() - 开始登录操作，用户名: sysadmin
+2026-03-11 11:19:40 - pages.login_page - INFO - [login_page.py:36] - login() - 等待登录响应...
+2026-03-11 11:19:42 - pages.login_page - INFO - [login_page.py:40] - login() - 检测到页面跳转，登录可能成功
+2026-03-11 11:19:42 - pages.login_page - INFO - [login_page.py:45] - login() - 登录操作执行完成
+2026-03-11 11:19:42 - pages.login_page - INFO - [login_page.py:90] - is_login_successful() - 检查登录是否成功
+2026-03-11 11:19:42 - pages.login_page - INFO - [login_page.py:98] - is_login_successful() - 登录成功
+2026-03-11 11:19:42 - login_fixture - INFO - [conftest.py:58] - logged_in_page() - 登录成功，返回已登录的page对象
+2026-03-11 11:19:42 - test_create_user_after_login[chromium] - INFO - [test_create_user.py:9] - test_create_user_after_login() - 开始执行登录后创建用户测试
+2026-03-11 11:19:42 - test_create_user_after_login[chromium] - INFO - [test_create_user.py:12] - test_create_user_after_login() - 第一步：导航到用户管理模块
+2026-03-11 11:19:42 - pages.user_page - INFO - [user_page.py:32] - __init__() - UserPage 初始化完成
+2026-03-11 11:19:42 - pages.user_page - INFO - [user_page.py:36] - navigate_to_user_module() - 导航到用户管理模块
+2026-03-11 11:19:42 - pages.user_page - INFO - [user_page.py:54] - navigate_to_user_module() - 等待用户管理页面加载
+2026-03-11 11:19:43 - pages.user_page - INFO - [user_page.py:56] - navigate_to_user_module() - 用户管理页面加载完成
+2026-03-11 11:19:45 - test_create_user_after_login[chromium] - INFO - [test_create_user.py:17] - test_create_user_after_login() - 第二步：点击添加用户按钮
+2026-03-11 11:19:45 - pages.user_page - INFO - [user_page.py:64] - click_add_user() - 点击添加用户按钮
+2026-03-11 11:19:45 - pages.user_page - INFO - [user_page.py:71] - click_add_user() - iframe已就绪
+2026-03-11 11:19:45 - pages.user_page - INFO - [user_page.py:84] - click_add_user() - 找到添加按钮，准备点击
+2026-03-11 11:19:45 - pages.user_page - INFO - [user_page.py:91] - click_add_user() - 方式1：成功点击添加按钮
+2026-03-11 11:19:45 - pages.user_page - INFO - [user_page.py:145] - click_add_user() - 等待用户表单加载
+2026-03-11 11:19:47 - pages.user_page - WARNING - [user_page.py:153] - click_add_user() - 未找到用户名输入框，可能表单未正确加载
+2026-03-11 11:19:47 - test_create_user_after_login[chromium] - INFO - [test_create_user.py:21] - test_create_user_after_login() - 第三步：填写用户信息
+2026-03-11 11:19:47 - pages.user_page - INFO - [user_page.py:157] - fill_user_info() - 填写用户信息：用户名=testuser001, 姓名=testuser001
+2026-03-11 11:19:57 - pages.user_page - ERROR - [user_page.py:177] - fill_user_info() - 填写表单失败: Locator.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("iframe#mainframe").content_frame.locator("#strusername_")
+
+2026-03-11 11:19:57 - test_create_user_with_fixture[chromium] - INFO - [test_create_user.py:42] - test_create_user_with_fixture() - 开始执行使用 fixture 数据创建用户测试
+2026-03-11 11:19:57 - pages.user_page - INFO - [user_page.py:32] - __init__() - UserPage 初始化完成
+2026-03-11 11:19:57 - test_create_user_with_fixture[chromium] - INFO - [test_create_user.py:52] - test_create_user_with_fixture() - 使用完整流程创建用户
+2026-03-11 11:19:57 - pages.user_page - INFO - [user_page.py:222] - create_user() - 开始创建用户流程
+2026-03-11 11:19:57 - pages.user_page - INFO - [user_page.py:36] - navigate_to_user_module() - 导航到用户管理模块
+2026-03-11 11:19:57 - pages.user_page - INFO - [user_page.py:54] - navigate_to_user_module() - 等待用户管理页面加载
+2026-03-11 11:19:57 - pages.user_page - INFO - [user_page.py:56] - navigate_to_user_module() - 用户管理页面加载完成
+2026-03-11 11:19:59 - pages.user_page - INFO - [user_page.py:64] - click_add_user() - 点击添加用户按钮
+2026-03-11 11:19:59 - pages.user_page - INFO - [user_page.py:71] - click_add_user() - iframe已就绪
+2026-03-11 11:20:00 - pages.user_page - INFO - [user_page.py:84] - click_add_user() - 找到添加按钮，准备点击
+2026-03-11 11:20:00 - pages.user_page - INFO - [user_page.py:91] - click_add_user() - 方式1：成功点击添加按钮
+2026-03-11 11:20:00 - pages.user_page - INFO - [user_page.py:145] - click_add_user() - 等待用户表单加载
+2026-03-11 11:20:02 - pages.user_page - WARNING - [user_page.py:153] - click_add_user() - 未找到用户名输入框，可能表单未正确加载
+2026-03-11 11:20:02 - pages.user_page - INFO - [user_page.py:157] - fill_user_info() - 填写用户信息：用户名=testuser002, 姓名=testuser002
+2026-03-11 11:20:02 - pages.user_page - INFO - [user_page.py:175] - fill_user_info() - 用户信息填写完成
+2026-03-11 11:20:02 - pages.user_page - INFO - [user_page.py:182] - save_user() - 点击保存按钮
+2026-03-11 11:20:02 - pages.user_page - INFO - [user_page.py:190] - save_user() - 通过 class 找到保存按钮
+2026-03-11 11:20:02 - pages.user_page - INFO - [user_page.py:198] - save_user() - 保存按钮点击成功
+2026-03-11 11:20:02 - pages.user_page - INFO - [user_page.py:205] - wait_for_save_complete() - 等待保存操作完成
+2026-03-11 11:20:04 - pages.user_page - INFO - [user_page.py:218] - wait_for_save_complete() - 保存操作完成
+2026-03-11 11:20:04 - pages.user_page - INFO - [user_page.py:234] - create_user() - 用户创建流程完成
+2026-03-11 11:20:04 - test_create_user_with_fixture[chromium] - INFO - [test_create_user.py:55] - test_create_user_with_fixture() - 测试成功，用户创建完成
+2026-03-11 11:20:04 - test_create_user_minimal_info[chromium] - INFO - [test_create_user.py:60] - test_create_user_minimal_info() - 开始执行最小信息创建用户测试
+2026-03-11 11:20:04 - pages.user_page - INFO - [user_page.py:32] - __init__() - UserPage 初始化完成
+2026-03-11 11:20:04 - pages.user_page - INFO - [user_page.py:36] - navigate_to_user_module() - 导航到用户管理模块
+2026-03-11 11:20:04 - pages.user_page - INFO - [user_page.py:54] - navigate_to_user_module() - 等待用户管理页面加载
+2026-03-11 11:20:04 - pages.user_page - INFO - [user_page.py:56] - navigate_to_user_module() - 用户管理页面加载完成
+2026-03-11 11:20:06 - pages.user_page - INFO - [user_page.py:64] - click_add_user() - 点击添加用户按钮
+2026-03-11 11:20:06 - pages.user_page - INFO - [user_page.py:71] - click_add_user() - iframe已就绪
+2026-03-11 11:20:06 - pages.user_page - INFO - [user_page.py:84] - click_add_user() - 找到添加按钮，准备点击
+2026-03-11 11:20:06 - pages.user_page - INFO - [user_page.py:91] - click_add_user() - 方式1：成功点击添加按钮
+2026-03-11 11:20:06 - pages.user_page - INFO - [user_page.py:145] - click_add_user() - 等待用户表单加载
+2026-03-11 11:20:08 - pages.user_page - WARNING - [user_page.py:153] - click_add_user() - 未找到用户名输入框，可能表单未正确加载
+2026-03-11 11:20:08 - test_create_user_minimal_info[chromium] - INFO - [test_create_user.py:73] - test_create_user_minimal_info() - 只填写必要信息创建用户
+2026-03-11 11:20:08 - pages.user_page - INFO - [user_page.py:157] - fill_user_info() - 填写用户信息：用户名=testuser003, 姓名=testuser003
+2026-03-11 11:20:08 - pages.user_page - INFO - [user_page.py:175] - fill_user_info() - 用户信息填写完成
+2026-03-11 11:20:08 - pages.user_page - INFO - [user_page.py:182] - save_user() - 点击保存按钮
+2026-03-11 11:20:08 - pages.user_page - INFO - [user_page.py:190] - save_user() - 通过 class 找到保存按钮
+2026-03-11 11:20:08 - pages.user_page - INFO - [user_page.py:198] - save_user() - 保存按钮点击成功
+2026-03-11 11:20:08 - pages.user_page - INFO - [user_page.py:205] - wait_for_save_complete() - 等待保存操作完成
+2026-03-11 11:20:11 - pages.user_page - INFO - [user_page.py:218] - wait_for_save_complete() - 保存操作完成
+2026-03-11 11:20:11 - test_create_user_minimal_info[chromium] - INFO - [test_create_user.py:78] - test_create_user_minimal_info() - 测试成功，最小信息用户创建完成
+2026-03-11 11:20:11 - test_valid_login[chromium] - INFO - [test_login.py:8] - test_valid_login() - 开始执行登录测试
+2026-03-11 11:20:11 - pages.login_page - INFO - [login_page.py:13] - __init__() - LoginPage 初始化完成
+2026-03-11 11:20:11 - test_valid_login[chromium] - INFO - [test_login.py:11] - test_valid_login() - 导航到登录页面
+2026-03-11 11:20:11 - pages.login_page - INFO - [login_page.py:18] - navigate() - 导航到登录页面: http://10.10.27.171:7070/ztna-manager/
+2026-03-11 11:20:12 - pages.login_page - INFO - [login_page.py:20] - navigate() - 登录页面加载完成
+2026-03-11 11:20:12 - test_valid_login[chromium] - INFO - [test_login.py:15] - test_valid_login() - 使用用户名: sysadmin 进行登录
+2026-03-11 11:20:12 - pages.login_page - INFO - [login_page.py:24] - login() - 开始登录操作，用户名: sysadmin
+2026-03-11 11:20:13 - pages.login_page - INFO - [login_page.py:36] - login() - 等待登录响应...
+2026-03-11 11:20:15 - pages.login_page - INFO - [login_page.py:40] - login() - 检测到页面跳转，登录可能成功
+2026-03-11 11:20:15 - pages.login_page - INFO - [login_page.py:45] - login() - 登录操作执行完成
+2026-03-11 11:20:15 - test_valid_login[chromium] - INFO - [test_login.py:18] - test_valid_login() - 登录操作完成
+2026-03-11 11:20:15 - test_valid_login[chromium] - INFO - [test_login.py:21] - test_valid_login() - 验证登录后是否跳转正确页面
+2026-03-11 11:20:15 - test_valid_login[chromium] - INFO - [test_login.py:23] - test_valid_login() - 测试成功，用户登录成功
+2026-03-11 11:20:15 - test_invalid_login[chromium] - INFO - [test_login.py:26] - test_invalid_login() - 开始执行登录失败测试
+2026-03-11 11:20:15 - pages.login_page - INFO - [login_page.py:13] - __init__() - LoginPage 初始化完成
+2026-03-11 11:20:15 - test_invalid_login[chromium] - INFO - [test_login.py:29] - test_invalid_login() - 导航到登录页面
+2026-03-11 11:20:15 - pages.login_page - INFO - [login_page.py:18] - navigate() - 导航到登录页面: http://10.10.27.171:7070/ztna-manager/
+2026-03-11 11:20:16 - pages.login_page - INFO - [login_page.py:20] - navigate() - 登录页面加载完成
+2026-03-11 11:20:16 - test_invalid_login[chromium] - INFO - [test_login.py:33] - test_invalid_login() - 使用无效用户名: wrong 进行登录
+2026-03-11 11:20:16 - pages.login_page - INFO - [login_page.py:24] - login() - 开始登录操作，用户名: wrong
+2026-03-11 11:20:17 - pages.login_page - INFO - [login_page.py:36] - login() - 等待登录响应...
+2026-03-11 11:20:27 - pages.login_page - INFO - [login_page.py:45] - login() - 登录操作执行完成
+2026-03-11 11:20:27 - test_invalid_login[chromium] - INFO - [test_login.py:36] - test_invalid_login() - 登录操作完成
+2026-03-11 11:20:28 - pages.login_page - INFO - [login_page.py:90] - is_login_successful() - 检查登录是否成功
+2026-03-11 11:20:28 - pages.login_page - INFO - [login_page.py:103] - is_login_successful() - 仍在登录页面，登录可能失败
+2026-03-11 11:20:28 - test_invalid_login[chromium] - INFO - [test_login.py:48] - test_invalid_login() - 确认登录失败，符合预期
+2026-03-11 11:20:28 - pages.login_page - INFO - [login_page.py:49] - get_error_message() - 获取错误提示信息
+2026-03-11 11:20:28 - pages.login_page - WARNING - [login_page.py:85] - get_error_message() - 未找到错误提示信息
+2026-03-11 11:20:28 - test_invalid_login[chromium] - WARNING - [test_login.py:60] - test_invalid_login() - 未找到明确的错误提示信息
+2026-03-11 11:20:28 - test_invalid_login[chromium] - INFO - [test_login.py:66] - test_invalid_login() - 测试成功，验证了登录失败场景
