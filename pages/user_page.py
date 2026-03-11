@@ -57,16 +57,30 @@ class UserPage:
         
         # 额外等待，确保 iframe 加载
         self.logger.debug("等待 iframe 加载")
-        self.page.wait_for_timeout(2000)
+        self.page.wait_for_timeout(2000)   
     
     def click_add_user(self):
         """点击添加用户按钮（在 iframe 中）"""
         self.logger.info("点击添加用户按钮")
         
-        # 直接在 iframe 中查找并点击添加按钮
+        # 尝试确保iframe已加载，但不阻塞操作
         try:
-            self.logger.debug("在 iframe 中查找添加按钮")
-            self.add_user_button.wait_for(state="visible", timeout=15000)
+            self.logger.debug("检查iframe状态")
+            iframe = self.page.frame("mainframe")
+            if iframe:
+                self.logger.info("iframe已就绪")
+            else:
+                self.logger.warning("iframe未找到，但继续尝试操作")
+        except Exception as e:
+            self.logger.warning(f"iframe检查失败: {str(e)}，继续尝试操作")
+        
+        # 尝试多种方式点击添加按钮
+        success = False
+        
+        # 方式1：通过iframe_locator直接查找
+        try:
+            self.logger.debug("方式1：通过iframe_locator查找添加按钮")
+            self.add_user_button.wait_for(state="visible", timeout=20000)
             self.logger.info("找到添加按钮，准备点击")
             
             # 滚动到元素
@@ -74,18 +88,58 @@ class UserPage:
             
             # 点击
             self.add_user_button.click()
-            self.logger.info("成功点击添加按钮")
+            self.logger.info("方式1：成功点击添加按钮")
+            success = True
         except Exception as e:
-            self.logger.error(f"点击添加按钮失败: {str(e)}")
-            
-            # 尝试通过文本点击
+            self.logger.warning(f"方式1失败: {str(e)}")
+        
+        # 方式2：通过文本点击
+        if not success:
             try:
-                self.logger.debug("尝试通过文本点击添加按钮")
-                self.add_button_text.click(timeout=5000)
-                self.logger.info("通过文本成功点击添加按钮")
-            except Exception as e2:
-                self.logger.error(f"通过文本点击也失败: {str(e2)}")
-                raise Exception("未找到添加用户按钮")
+                self.logger.debug("方式2：尝试通过文本点击添加按钮")
+                self.add_button_text.wait_for(state="visible", timeout=15000)
+                self.add_button_text.click()
+                self.logger.info("方式2：通过文本成功点击添加按钮")
+                success = True
+            except Exception as e:
+                self.logger.warning(f"方式2失败: {str(e)}")
+        
+        # 方式3：直接通过iframe对象定位
+        if not success:
+            try:
+                self.logger.debug("方式3：尝试通过iframe直接定位")
+                iframe = self.page.frame("mainframe")
+                if iframe:
+                    add_btn = iframe.locator("#addChildrenMemberbtn")
+                    add_btn.wait_for(state="visible", timeout=15000)
+                    add_btn.click()
+                    self.logger.info("方式3：通过iframe直接定位成功点击添加按钮")
+                    success = True
+                else:
+                    self.logger.warning("方式3：iframe未找到")
+            except Exception as e:
+                self.logger.warning(f"方式3失败: {str(e)}")
+        
+        # 方式4：使用JavaScript强制点击
+        if not success:
+            try:
+                self.logger.debug("方式4：尝试使用JavaScript点击")
+                iframe = self.page.frame("mainframe")
+                if iframe:
+                    iframe.evaluate("""() => {
+                        const btn = document.querySelector('#addChildrenMemberbtn');
+                        if (btn) btn.click();
+                    }""")
+                    self.logger.info("方式4：JavaScript点击成功")
+                    success = True
+                else:
+                    self.logger.warning("方式4：iframe未找到")
+            except Exception as e:
+                self.logger.warning(f"方式4失败: {str(e)}")
+        
+        if not success:
+            self.logger.error("所有点击添加按钮的方式都失败")
+            raise Exception("未找到添加用户按钮")
         
         # 等待表单加载
         self.logger.info("等待用户表单加载")

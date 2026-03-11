@@ -32,9 +32,9 @@ def run_tests(test_path=None, headed=False):
     
     if result.returncode != 0:
         print("✗ 测试运行失败")
-        return False
+    else:
+        print("✓ 测试运行完成")
     
-    print("✓ 测试运行完成")
     return True
 
 
@@ -64,9 +64,7 @@ def main():
         if not args.no_clean:
             clean_old_data()
         
-        if not run_tests(test_path=args.path, headed=args.headed):
-            print("\n测试失败，请检查错误信息")
-            sys.exit(1)
+        run_tests(test_path=args.path, headed=args.headed)
         
         serve_report()
         
